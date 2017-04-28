@@ -4,7 +4,6 @@
 pub extern crate pitch_calc;
 pub use pitch_calc::{Letter, LetterOctave};
 
-
 // The names of the ports on which the `25SL` emits MIDI input values.
 pub const MIDI_INPUT_PORT_0: &'static str = "ReMOTE SL 24:0";
 pub const MIDI_INPUT_PORT_1: &'static str = "ReMOTE SL 24:1";

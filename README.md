@@ -1,4 +1,4 @@
-novation_remote_25sl
+novation_remote_25sl [![Build Status](https://travis-ci.org/mitchmindtree/novation_remote_25sl.svg?branch=master)](https://travis-ci.org/mitchmindtree/novation_remote_25sl) [![Crates.io](https://img.shields.io/crates/v/novation_remote_25sl.svg)](https://crates.io/crates/novation_remote_25sl) [![Crates.io](https://img.shields.io/crates/l/novation_remote_25sl.svg)](https://github.com/mitchmindtree/novation_remote_25sl/blob/master/LICENSE-MIT) [![docs.rs](https://docs.rs/novation_remote_25sl/badge.svg)](https://docs.rs/novation_remote_25sl/)
 --------------------
 
 User friendly API to the Ableton Novation ReMOTE 25SL MIDI controller.
