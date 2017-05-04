@@ -4,10 +4,8 @@
 pub extern crate pitch_calc;
 pub use pitch_calc::{Letter, LetterOctave};
 
-// The names of the ports on which the `25SL` emits MIDI input values.
-pub const MIDI_INPUT_PORT_0: &'static str = "ReMOTE SL 24:0";
-pub const MIDI_INPUT_PORT_1: &'static str = "ReMOTE SL 24:1";
-pub const MIDI_INPUT_PORT_2: &'static str = "ReMOTE SL 24:2";
+/// The name of the ports on which the `25SL` emits MIDI input values.
+pub const MIDI_INPUT_PORT_PREFIX: &'static str = "ReMOTE SL";
 
 /// The MIDI input ports on which the `25SL` emits MIDI input values.
 #[derive(Copy, Clone, Debug, Hash, PartialEq, Eq)]
@@ -167,11 +165,15 @@ impl InputPort {
 
     /// Determine the `InputPort` from its name.
     pub fn from_name(name: &str) -> Option<Self> {
-        match name {
-            MIDI_INPUT_PORT_0 => Some(InputPort::A),
-            MIDI_INPUT_PORT_1 => Some(InputPort::B),
-            MIDI_INPUT_PORT_2 => Some(InputPort::C),
-            _ => None,
+        if name.starts_with(MIDI_INPUT_PORT_PREFIX) {
+            match name.chars().last() {
+                Some('0') => Some(InputPort::A),
+                Some('1') => Some(InputPort::B),
+                Some('2') => Some(InputPort::C),
+                _ => None,
+            }
+        } else {
+            None
         }
     }
 
